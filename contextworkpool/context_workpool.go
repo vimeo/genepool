@@ -1,7 +1,10 @@
 package contextworkpool
 
-import "github.com/mkrufky/workpool"
-import "context"
+import (
+	"context"
+
+	"github.com/mkrufky/genepool/workpool"
+)
 
 // ContextWorkpool is an object that will allocate a channel for scheduling
 // async work with context and start up a predefined number of workers to

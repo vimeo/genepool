@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mkrufky/workpool"
+	"github.com/mkrufky/genepool/workpool"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

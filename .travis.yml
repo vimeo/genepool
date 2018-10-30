@@ -15,12 +15,14 @@ matrix:
   fast_finish: true
 install:
   - mkdir -p $HOME/src
-  - mv $HOME/gopath/src/github.com/mkrufky/workpool $HOME/src
-  - export TRAVIS_BUILD_DIR=$HOME/src/workpool
-  - cd $HOME/src/workpool
+  - mv $HOME/gopath/src/github.com/mkrufky/genepool $HOME/src
+  - export TRAVIS_BUILD_DIR=$HOME/src/genepool
+  - cd $HOME/src/genepool
   - go get github.com/smartystreets/goconvey/convey
-  - go get github.com/mkrufky/workpool
+  - go get github.com/mkrufky/genepool/workpool
+  - go get github.com/mkrufky/genepool/contextworkpool
 script:
+- cd workpool
 - go test -v -timeout 20s
-- cd context_workpool
+- cd ../contextworkpool
 - go test -v -timeout 20s
