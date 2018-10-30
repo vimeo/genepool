@@ -1,0 +1,19 @@
+image: Visual Studio 2015
+
+init:
+  - set PATH=%PATH%;C:\mingw-w64\x86_64-7.3.0-posix-seh-rt_v5-rev0\mingw64\bin;%GOPATH%\bin
+  - go version
+  - go env
+
+environment:
+  HUGO_BUILD_TAGS: extended
+
+# clones and cd's to path
+clone_folder: C:\workpool
+
+build_script:
+  - go get github.com/smartystreets/goconvey/convey
+  - go get github.com/mkrufky/workpool
+  - go test -v -timeout 20s
+  - cd context_workpool
+  - go test -v -timeout 20s
