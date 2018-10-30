@@ -3,6 +3,9 @@ package contextworkpool
 import "github.com/mkrufky/workpool"
 import "context"
 
+// ContextWorkpool is an object that will allocate a channel for scheduling
+// async work with context and start up a predefined number of workers to
+// consume work from this channel
 type ContextWorkpool struct {
 	*workpool.Workpool
 }
@@ -40,6 +43,7 @@ func (w *ContextWorkpool) Run(ctx context.Context, f workpool.JobFunc, arg inter
 	}
 }
 
+// New returns a new ContextWorkpool with its own channel with a buffer of size `buffer`
 func New(workerCount, chanBuffer int) *ContextWorkpool {
 	return &ContextWorkpool{workpool.New(workerCount, chanBuffer)}
 }

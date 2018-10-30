@@ -15,7 +15,7 @@ func (w *Workpool) worker() {
 	}
 }
 
-// New returns a new worker with its own channel with a buffer of size `buffer`
+// New returns a new Workpool with its own channel with a buffer of size `buffer`
 func New(workerCount, chanBuffer int) *Workpool {
 
 	// c channel accepts incoming work
