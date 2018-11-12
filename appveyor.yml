@@ -13,8 +13,8 @@ clone_folder: C:\genepool
 
 build_script:
   - go get github.com/smartystreets/goconvey/convey
-  - go get github.com/mkrufky/genepool/workpool
-  - go get github.com/mkrufky/genepool/contextworkpool
+  - go get github.com/vimeo/genepool/workpool
+  - go get github.com/vimeo/genepool/contextworkpool
   - cd workpool
   - go test -v -timeout 20s
   - cd ../contextworkpool
